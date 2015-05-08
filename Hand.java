@@ -52,10 +52,16 @@ public class Hand implements Comparable {
           happyending.put(ref.suit, appender);
         }
      }
+     Collection<ArrayList<Integer>> allofdeez = happyending.values();
+     //List sortedList = new ArrayList(allofdeez);
+     //Collections.sort(allofdeez);
+     System.out.println(allofdeez);
      if(royalFlush(happyending))
         System.out.println(hand);
      if(straightFlush(happyending))
         System.out.println(hand);
+     /*if(foak(happyending))
+        System.out.println(hand);*/
 
      return "TODO: String of Best Hand; may need helper methods";
    }
@@ -92,6 +98,18 @@ public class Hand implements Comparable {
      }
      return false;
    }
+   /*public boolean foak(Map<String, ArrayList<Integer>> happyending)
+   {
+     Set<ArrayList<Integer>> allofdeez = happyending.keySet();
+     List sortedList = new ArrayList(allofdeez);
+     Collections.sort(sortedList);
+     if(allofdeez.size() != 4)
+      return false;
+     for(ArrayList<Integer> findsize: allofdeez)
+     {
+
+     }
+   }*/
 
    public int compareTo(Object x){
       Hand other = (Hand)x;

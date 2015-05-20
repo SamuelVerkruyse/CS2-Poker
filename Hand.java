@@ -53,8 +53,22 @@ public class Hand implements Comparable {
         }
      }
      Collection<ArrayList<Integer>> allofdeez = happyending.values();
-     //List sortedList = new ArrayList(allofdeez);
+     //List allofdis = new ArrayList(allofdeez);
+     List sortedList = new ArrayList(allofdeez);
      //Collections.sort(allofdeez);
+    Collections.sort(sortedList, new Comparator<ArrayList>(){
+      public int compare(ArrayList a1, ArrayList a2)
+        {
+
+            return  a1.size() - a2.size();
+        }
+      });
+    /*{
+      public int compare(ArrayList a1, ArrayList a2)
+      {
+          return a2.size() - a1.size(); // assumes you want biggest to smallest
+      }
+    });*/
      System.out.println(allofdeez);
      if(royalFlush(happyending))
         System.out.println(hand);
